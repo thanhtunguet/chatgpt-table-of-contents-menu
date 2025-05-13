@@ -1,0 +1,126 @@
+/* --- TOC Panel --- */
+#toc-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100%;
+    background-color: var(--bg, #ffffff);
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
+    font-family: var(--font-sans, "Helvetica Neue", sans-serif);
+    font-size: 0.875rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 9998;
+    border-left: 1px solid var(--border, #dcdcdc);
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+  }
+  
+  #toc-panel.collapsed {
+    transform: translateX(280px);
+  }
+  
+  /* Header */
+  #toc-header {
+    padding: 12px 16px;
+    background-color: var(--header-bg, #f3f4f6);
+    border-bottom: 1px solid var(--border, #e5e7eb);
+    font-weight: 600;
+    color: var(--header-text, #111827);
+  }
+  
+  /* TOC List */
+  #toc-list {
+    list-style: none;
+    padding: 12px;
+    margin: 0;
+    overflow-y: auto;
+    flex: 1;
+    color: var(--text, #111827);
+  }
+  
+  #toc-list li {
+    padding: 6px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  #toc-list li:hover {
+    background-color: var(--hover-bg, #e5e7eb);
+  }
+  
+  #toc-list ul {
+    list-style: none;
+    margin-left: 16px;
+    padding-left: 0;
+  }
+  
+  /* TOC Handle */
+  #toc-handle {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 100px;
+    background-color: var(--handle-bg, #f3f4f6);
+    color: var(--handle-text, #111827);
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    border-left: 1px solid var(--border, #e5e7eb);
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    z-index: 9999;
+  }
+  
+  #toc-handle:hover {
+    background-color: var(--hover-bg, #e5e7eb);
+  }
+  
+  /* Heading highlight animation */
+  @keyframes highlightFade {
+    0% {
+      background-color: #fef08a;
+    }
+    100% {
+      background-color: transparent;
+    }
+  }
+  .toc-highlight {
+    animation: highlightFade 1.5s forwards;
+  }
+  
+  /* Dark Mode (matches ChatGPT’s) */
+  @media (prefers-color-scheme: dark) {
+    #toc-panel {
+      background-color: #1e1e20;
+      border-left: 1px solid #3f3f46;
+    }
+    #toc-header {
+      background-color: #2e2e33;
+      color: #f4f4f5;
+      border-bottom: 1px solid #3f3f46;
+    }
+    #toc-list {
+      color: #f4f4f5;
+    }
+    #toc-list li:hover {
+      background-color: #3f3f46;
+    }
+    #toc-handle {
+      background-color: #2e2e33;
+      color: #f4f4f5;
+      border-left: 1px solid #3f3f46;
+    }
+    #toc-handle:hover {
+      background-color: #3f3f46;
+    }
+  }

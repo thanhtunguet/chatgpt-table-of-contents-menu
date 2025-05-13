@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect x="8" y="8" width="112" height="112" rx="16" fill="#10a37f"/>
+    <!-- TOC Lines -->
+    <g fill="#ffffff">
+        <!-- Title line -->
+        <rect x="24" y="24" width="80" height="8" rx="4"/>
+        <!-- Content lines -->
+        <rect x="24" y="44" width="60" height="6" rx="3"/>
+        <rect x="32" y="58" width="50" height="4" rx="2"/>
+        <rect x="32" y="70" width="45" height="4" rx="2"/>
+        <rect x="24" y="84" width="55" height="6" rx="3"/>
+        <rect x="32" y="98" width="40" height="4" rx="2"/>
+    </g>
+</svg>
