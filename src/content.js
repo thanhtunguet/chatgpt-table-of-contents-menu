@@ -17,7 +17,11 @@
     const handle = document.createElement("div");
     handle.id = "toc-handle";
     handle.textContent = "TOC";
+
+    const mainContent = document.querySelector('.flex.h-full.w-full.flex-col:first-of-type');
+
     document.body.appendChild(handle);
+    mainContent.classList.add("has-toc");
 
     let chatContainer = null;
     let observer = null;
@@ -99,5 +103,11 @@
 
     handle.addEventListener("click", () => {
         panel.classList.toggle("collapsed");
+        const isCollapsed = panel.classList.contains("collapsed");
+        if (isCollapsed) {
+            mainContent.classList.remove("has-toc");
+        } else {
+            mainContent.classList.add("has-toc");
+        }
     });
 })();

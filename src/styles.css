@@ -124,3 +124,8 @@
       background-color: #3f3f46;
     }
   }
+
+  .has-toc {
+    width: calc(100% - 280px);
+    margin-right: 280px;
+  }

@@ -10,10 +10,10 @@
                 "https://chatgpt.com/*"
             ],
             "css": [
-                "styles.css"
+                "src/styles.css"
             ],
             "js": [
-                "content.js"
+                "src/content.js"
             ]
         }
     ],
